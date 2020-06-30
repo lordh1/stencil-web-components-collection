@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0">
+  <title>Stencil Component Starter</title>
+
+  <script type="module" src="/build/stencil.esm.js"></script>
+  <script nomodule src="/build/stencil.js"></script>
+
+</head>
+<body>
+  <app-bar name="Menu"></app-bar>
+  <my-component first="Stencil" last="'Don't call me a framework' JS"></my-component>
+
+  <script>
+    const appBar = document.querySelector('app-bar');
+    appBar.items = [
+      { name: 'test1', link: '' },
+      { name: 'test2', link: '' },
+      { name: 'test3', link: '' },
+    ];
+  </script>
+</body>
+</html>

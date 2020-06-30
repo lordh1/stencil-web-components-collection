@@ -1,0 +1,56 @@
+:host {
+  display: block;
+}
+
+.AppBar {
+  border: 1px solid blue;
+
+  &__menu {
+    position: relative;
+    display: inline-flex;
+    flex-direction: row;
+
+    &--icon {
+      display: inline-flex;
+      padding: 10px;
+      cursor: pointer;
+    }
+
+    &--icon:hover ~ &--items {
+      display: flex;
+    }
+
+    &--items {
+      border: 1px solid red;
+      position: absolute;
+      top: 0;
+      display: none;
+      background-color: #fff;
+      flex-direction: column;
+      padding: 20px;
+
+      &>div {
+        margin-bottom: 10px;
+
+        &:hover {
+          cursor: pointer;
+          color: #0016e4;
+        }
+      }
+    }
+
+    &--items:hover {
+      display: flex;
+    }
+  }
+
+  &__name {
+    display: inline-flex;
+    padding: 10px;
+  }
+}
+
+
+
+
+
