@@ -10,8 +10,14 @@ describe('app-bar', () => {
     expect(root).toEqualHtml(`
       <app-bar>
         <mock:shadow-root>
-          <div>
-            Hello, World! I'm
+          <div class="AppBar">
+            <div class="AppBar__menu">
+              <div class="AppBar__menu--icon">
+                <img src="/assets/hamburger.svg">
+              </div>
+              <div class="AppBar__menu--items"></div>
+            </div>
+            <div class="AppBar__name"></div>
           </div>
         </mock:shadow-root>
       </app-bar>
@@ -24,10 +30,18 @@ describe('app-bar', () => {
       html: `<app-bar name="Menu"></app-bar>`
     });
     expect(root).toEqualHtml(`
-      <app-bar first="Stencil" last="'Don't call me a framework' JS">
+      <app-bar name="Menu">
         <mock:shadow-root>
-          <div>
-            Hello, World! I'm Stencil 'Don't call me a framework' JS
+          <div class="AppBar">
+            <div class="AppBar__menu">
+              <div class="AppBar__menu--icon">
+                <img src="/assets/hamburger.svg">
+              </div>
+              <div class="AppBar__menu--items"></div>
+            </div>
+            <div class="AppBar__name">
+              Menu
+            </div>
           </div>
         </mock:shadow-root>
       </app-bar>

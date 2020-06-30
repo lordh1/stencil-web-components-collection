@@ -33,7 +33,7 @@ export class AppBar {
         <div class='AppBar__menu'>
           <div class='AppBar__menu--icon'><img src={getAssetPath('assets/hamburger.svg')} /></div>
           <div class='AppBar__menu--items'>
-            {this.items.map((item, key) => {
+            {this.items && this.items.map((item, key) => {
               return (<div key={key}>{item.name}</div>)
             })}
           </div>

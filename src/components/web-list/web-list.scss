@@ -1,0 +1,37 @@
+@import "src/scss/vars";
+
+:host {
+  display: block;
+}
+
+.WebList {
+  border: 1px solid blue;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  &__name {
+    display: inline-flex;
+    padding: 10px;
+    font-weight: bold;
+  }
+
+  &__list {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    &>div {
+      margin: 5px;
+
+      &:hover {
+        cursor: pointer;
+        color: $hover-color;
+      }
+    }
+  }
+}
+
+
+
+
+

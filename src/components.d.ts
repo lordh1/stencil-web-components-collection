@@ -6,6 +6,7 @@
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 import { MenuItemInterface } from "./components/app-bar/app-bar";
+import { MenuItemInterface as MenuItemInterface1 } from "./components/web-list/web-list";
 export namespace Components {
     interface AppBar {
         /**
@@ -31,6 +32,16 @@ export namespace Components {
          */
         "middle": string;
     }
+    interface WebList {
+        /**
+          * List of items to show
+         */
+        "items": MenuItemInterface[];
+        /**
+          * Header name
+         */
+        "name": string;
+    }
 }
 declare global {
     interface HTMLAppBarElement extends Components.AppBar, HTMLStencilElement {
@@ -45,9 +56,16 @@ declare global {
         prototype: HTMLMyComponentElement;
         new (): HTMLMyComponentElement;
     };
+    interface HTMLWebListElement extends Components.WebList, HTMLStencilElement {
+    }
+    var HTMLWebListElement: {
+        prototype: HTMLWebListElement;
+        new (): HTMLWebListElement;
+    };
     interface HTMLElementTagNameMap {
         "app-bar": HTMLAppBarElement;
         "my-component": HTMLMyComponentElement;
+        "web-list": HTMLWebListElement;
     }
 }
 declare namespace LocalJSX {
@@ -75,9 +93,20 @@ declare namespace LocalJSX {
          */
         "middle"?: string;
     }
+    interface WebList {
+        /**
+          * List of items to show
+         */
+        "items"?: MenuItemInterface[];
+        /**
+          * Header name
+         */
+        "name"?: string;
+    }
     interface IntrinsicElements {
         "app-bar": AppBar;
         "my-component": MyComponent;
+        "web-list": WebList;
     }
 }
 export { LocalJSX as JSX };
@@ -86,6 +115,7 @@ declare module "@stencil/core" {
         interface IntrinsicElements {
             "app-bar": LocalJSX.AppBar & JSXBase.HTMLAttributes<HTMLAppBarElement>;
             "my-component": LocalJSX.MyComponent & JSXBase.HTMLAttributes<HTMLMyComponentElement>;
+            "web-list": LocalJSX.WebList & JSXBase.HTMLAttributes<HTMLWebListElement>;
         }
     }
 }

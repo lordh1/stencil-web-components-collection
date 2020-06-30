@@ -11,6 +11,8 @@
 </head>
 <body>
   <app-bar name="Menu"></app-bar>
+  <app-bar></app-bar>
+  <web-list name="List"></web-list>
   <my-component first="Stencil" last="'Don't call me a framework' JS"></my-component>
 
   <script>
@@ -19,6 +21,13 @@
       { name: 'test1', link: '' },
       { name: 'test2', link: '' },
       { name: 'test3', link: '' },
+    ];
+
+    const webList = document.querySelector('web-list');
+    webList.items = [
+      { name: 'row1', link: '' },
+      { name: 'row2', link: '' },
+      { name: 'row3', link: '' },
     ];
   </script>
 </body>

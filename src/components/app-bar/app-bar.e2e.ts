@@ -15,18 +15,10 @@ describe('app-bar', () => {
     await page.setContent('<app-bar></app-bar>');
     const component = await page.find('app-bar');
     const element = await page.find('app-bar >>> div');
-    expect(element.textContent).toEqual(`Hello, World! I'm `);
+    expect(element.textContent).toEqual(``);
 
-    component.setProperty('first', 'James');
+    component.setProperty('name', 'Menu');
     await page.waitForChanges();
-    expect(element.textContent).toEqual(`Hello, World! I'm James`);
-
-    component.setProperty('last', 'Quincy');
-    await page.waitForChanges();
-    expect(element.textContent).toEqual(`Hello, World! I'm James Quincy`);
-
-    component.setProperty('middle', 'Earl');
-    await page.waitForChanges();
-    expect(element.textContent).toEqual(`Hello, World! I'm James Earl Quincy`);
+    expect(element.textContent).toEqual('Menu');
   });
 });
