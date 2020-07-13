@@ -32,6 +32,12 @@ export namespace Components {
          */
         "middle": string;
     }
+    interface WebButton {
+        /**
+          * Header name
+         */
+        "name": string;
+    }
     interface WebList {
         /**
           * List of items to show
@@ -56,6 +62,12 @@ declare global {
         prototype: HTMLMyComponentElement;
         new (): HTMLMyComponentElement;
     };
+    interface HTMLWebButtonElement extends Components.WebButton, HTMLStencilElement {
+    }
+    var HTMLWebButtonElement: {
+        prototype: HTMLWebButtonElement;
+        new (): HTMLWebButtonElement;
+    };
     interface HTMLWebListElement extends Components.WebList, HTMLStencilElement {
     }
     var HTMLWebListElement: {
@@ -65,6 +77,7 @@ declare global {
     interface HTMLElementTagNameMap {
         "app-bar": HTMLAppBarElement;
         "my-component": HTMLMyComponentElement;
+        "web-button": HTMLWebButtonElement;
         "web-list": HTMLWebListElement;
     }
 }
@@ -93,6 +106,12 @@ declare namespace LocalJSX {
          */
         "middle"?: string;
     }
+    interface WebButton {
+        /**
+          * Header name
+         */
+        "name"?: string;
+    }
     interface WebList {
         /**
           * List of items to show
@@ -106,6 +125,7 @@ declare namespace LocalJSX {
     interface IntrinsicElements {
         "app-bar": AppBar;
         "my-component": MyComponent;
+        "web-button": WebButton;
         "web-list": WebList;
     }
 }
@@ -115,6 +135,7 @@ declare module "@stencil/core" {
         interface IntrinsicElements {
             "app-bar": LocalJSX.AppBar & JSXBase.HTMLAttributes<HTMLAppBarElement>;
             "my-component": LocalJSX.MyComponent & JSXBase.HTMLAttributes<HTMLMyComponentElement>;
+            "web-button": LocalJSX.WebButton & JSXBase.HTMLAttributes<HTMLWebButtonElement>;
             "web-list": LocalJSX.WebList & JSXBase.HTMLAttributes<HTMLWebListElement>;
         }
     }

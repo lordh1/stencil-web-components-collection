@@ -1,0 +1,25 @@
+@import "src/scss/vars";
+
+:host {
+  display: block;
+}
+
+.WebButton {
+  border-radius: 5px;
+  background-color: $primary-color;
+  color: $secondary-text-color;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 5px 30px;
+  width: 50px;
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+
+
+
+
